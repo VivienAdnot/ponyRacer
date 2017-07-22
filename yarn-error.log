@@ -1,0 +1,84 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\Vivien\Downloads\cmder\bin;C:\Users\Vivien\Downloads\cmder\vendor\git-for-windows\cmd;C:\Users\Vivien\Downloads\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Users\Vivien\Downloads\cmder\vendor\conemu-maximus5;C:\Users\Vivien\Downloads\cmder\vendor\conemu-maximus5\ConEmu;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Users\Vivien\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Vivien\AppData\Roaming\npm;C:\Users\Vivien\AppData\Local\atom\bin;C:\Users\Vivien\AppData\Local\Microsoft\WindowsApps;C:\Users\Vivien\AppData\Local\Yarn\bin;C:\Users\Vivien\Downloads\cmder\vendor\git-for-windows\usr\bin;C:\Users\Vivien\Downloads\cmder\vendor\git-for-windows\usr\share\vim\vim74;C:\Users\Vivien\Downloads\cmder\
+
+Yarn version: 
+  0.27.5
+
+Node version: 
+  6.10.2
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "ponyracer",
+    "version": "0.0.0",
+    "license": "MIT",
+    "scripts": {
+      "ng": "ng",
+      "start": "ng serve",
+      "build": "ng build",
+      "test": "ng test",
+      "lint": "ng lint",
+      "e2e": "ng e2e"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/animations": "^4.0.0",
+      "@angular/common": "^4.0.0",
+      "@angular/compiler": "^4.0.0",
+      "@angular/core": "^4.0.0",
+      "@angular/forms": "^4.0.0",
+      "@angular/http": "^4.0.0",
+      "@angular/platform-browser": "^4.0.0",
+      "@angular/platform-browser-dynamic": "^4.0.0",
+      "@angular/router": "^4.0.0",
+      "core-js": "^2.4.1",
+      "rxjs": "^5.1.0",
+      "zone.js": "^0.8.4"
+    },
+    "devDependencies": {
+      "@angular/cli": "1.2.1",
+      "@angular/compiler-cli": "^4.0.0",
+      "@angular/language-service": "^4.0.0",
+      "@types/jasmine": "~2.5.53",
+      "@types/jasminewd2": "~2.0.2",
+      "@types/node": "~6.0.60",
+      "codelyzer": "~3.0.1",
+      "jasmine-core": "~2.6.2",
+      "jasmine-spec-reporter": "~4.1.0",
+      "karma": "~1.7.0",
+      "karma-chrome-launcher": "~2.1.1",
+      "karma-cli": "~1.0.1",
+      "karma-coverage-istanbul-reporter": "^1.2.1",
+      "karma-jasmine": "~1.1.0",
+      "karma-jasmine-html-reporter": "^0.2.2",
+      "protractor": "~5.1.2",
+      "ts-node": "~3.0.4",
+      "tslint": "~5.3.2",
+      "typescript": "~2.3.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: write EPIPE
+      at exports._errnoException (util.js:1018:11)
+      at Socket._writeGeneric (net.js:715:26)
+      at Socket._write (net.js:734:8)
+      at doWrite (_stream_writable.js:334:12)
+      at writeOrBuffer (_stream_writable.js:320:5)
+      at Socket.Writable.write (_stream_writable.js:247:11)
+      at Socket.write (net.js:661:40)
+      at ConsoleReporter._log (C:\Program Files (x86)\Yarn\lib\yarn-cli.js:81298:17)
+      at ConsoleReporter.log (C:\Program Files (x86)\Yarn\lib\yarn-cli.js:81290:10)
+      at ConsoleReporter.step (C:\Program Files (x86)\Yarn\lib\yarn-cli.js:81243:10)

@@ -7,8 +7,8 @@ describe('ponyracer App', () => {
     page = new PonyracerPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to pr!');
+    expect(page.getParagraphText()).toEqual('Ponyracer');
   });
 });
