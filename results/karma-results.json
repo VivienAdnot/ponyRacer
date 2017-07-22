@@ -1,1 +1,1 @@
-{"browsers":{"55049789":{"id":"55049789","fullName":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36","name":"Chrome 59.0.3071 (Windows 10 0.0.0)","state":5,"lastResult":{"success":11,"failed":0,"skipped":0,"total":11,"totalTime":596,"netTime":559,"error":false,"disconnected":false},"disconnectsCount":0}},"result":{},"summary":{"success":11,"failed":0,"error":false,"disconnected":false,"exitCode":0}}
+{"browsers":{},"result":{},"summary":{"success":0,"failed":0,"error":false,"disconnected":true,"exitCode":1}}
