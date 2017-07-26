@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Sign up</h2>
+
+        <!--div id="registration-error" class="alert alert-danger" *ngIf="registrationFailed">
+            <button type="button" class="close" aria-label="Close" (click)="registrationFailed = false;">
+                <span aria-hidden="true">&#215;</span>
+            </button>
+            Try again with another login...
+        </div-->
+
+        <form (ngSubmit)="register()" [formGroup]="userForm">
+
+            <div class="form-group">
+                <label for="login" id="login-label">login</label>
+                <input id="login" class="form-control" formControlName="login">
+                <div id="login-warning" *ngIf="loginCtrl.dirty && loginCtrl.hasError('required')">Login is required</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" type="password" formControlName="password">
+                <div *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('required')">Password is required</div>
+            </div>
+
+            <div class="form-group">
+                <label for="birthYear">Birth Year</label>
+                <input id="birthYear" class="form-control" type="number" formControlName="birthYear">
+                <div *ngIf="birthYearCtrl.dirty && birthYearCtrl.hasError('required')">Birth year is required</div>
+            </div>
+
+            <button class="btn btn-primary" type="submit" [disabled]="!userForm.valid">Let’s go!</button>
+        </form>
+    </div>
+</div>
