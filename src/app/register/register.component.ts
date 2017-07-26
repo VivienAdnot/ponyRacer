@@ -65,14 +65,8 @@ export class RegisterComponent implements OnInit {
           this.userForm.value.passwordForm.password,
           this.userForm.value.birthYear
       ).subscribe(
-          () => {
-              console.log("ok");
-              this.router.navigate(['/'])
-          },
-          () => {
-              console.log("no ok");
-              this.registrationFailed = true;
-          }
+          () => this.router.navigate(['/']),
+          () => this.registrationFailed = true
       );
   }
 }
