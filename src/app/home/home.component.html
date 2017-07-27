@@ -2,11 +2,13 @@
       <h1>Ponyracer <small>Always a pleasure to bet on ponies</small></h1>
 </div>
 
-<div *ngIf="!user" class="text-xs-center">
+<div *ngIf="!user; else loggedIn" class="text-xs-center">
     <a class="btn btn-primary" routerLink="/login">Login</a>
     <a class="btn btn-primary" routerLink="/register">Register</a>
 </div>
 
-<div *ngIf="user" class="text-xs-center">
-    <a class="btn btn-primary" routerLink="/races">Races</a>
-</div>
+<ng-template #loggedIn>
+    <div class="text-xs-center">
+        <a class="btn btn-primary" routerLink="/races">Races</a>
+    </div>
+</ng-template>

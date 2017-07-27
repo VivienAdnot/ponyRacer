@@ -9,7 +9,6 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
     credentials = {
         login: '',
         password: ''
@@ -31,5 +30,4 @@ export class LoginComponent implements OnInit {
           () => this.authenticationFailed = true
         );
     }
-
 }
