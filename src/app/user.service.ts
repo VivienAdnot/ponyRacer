@@ -9,6 +9,7 @@ import { UserModel } from './models/user.model';
 @Injectable()
 export class UserService {
   public userEvents = new BehaviorSubject<UserModel>(undefined);
+  private storageKey = 'rememberMe';
 
   constructor(private httpClient: HttpClient) {
       this.retrieveUser();
@@ -24,13 +25,18 @@ export class UserService {
         .do((user: UserModel) => this.storeLoggedInUser(user));
   }
 
+  logout() {
+      this.userEvents.next(null);
+      window.localStorage.removeItem(this.storageKey);
+  }
+
   storeLoggedInUser(user: UserModel) {
-      window.localStorage.setItem('rememberMe', JSON.stringify(user));
+      window.localStorage.setItem(this.storageKey, JSON.stringify(user));
       this.userEvents.next(user);
   }
 
   retrieveUser() {
-      const userStringified = window.localStorage.getItem('rememberMe');
+      const userStringified = window.localStorage.getItem(this.storageKey);
       if (userStringified) {
           const user = JSON.parse(userStringified);
           this.userEvents.next(user);
