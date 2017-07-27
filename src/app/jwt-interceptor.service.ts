@@ -4,14 +4,14 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class JwtInterceptorService implements HttpInterceptor {
-    private token: string;
+  private token: string;
 
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       if (this.token) {
-          const transformedRequest = req.clone({setHeaders: { 'Authorization': 'Bearer ' + this.token} });
-          return next.handle(transformedRequest);
+          const clone = req.clone({ setHeaders: { 'Authorization': `Bearer ${this.token}` } });
+          return next.handle(clone);
       }
 
       return next.handle(req);

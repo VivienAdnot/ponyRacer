@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 import { environment } from '../environments/environment';
+import { RaceModel } from './models/race.model';
 
 @Injectable()
 export class RaceService {
   constructor(private httpClient: HttpClient) { }
 
-  list() {
-    return this.httpClient.get(environment.baseUrl + 'api/races?status=PENDING');
+  list(): Observable<Array<RaceModel>> {
+    const params = new HttpParams().set('status', 'PENDING');
+    return this.httpClient.get<Array<RaceModel>>(`${environment.baseUrl}/api/races`, { params });
   }
 }

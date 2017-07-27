@@ -23,7 +23,7 @@ export class UserService {
   }
 
   authenticate(credentials: {login: string; password: string}): Observable<UserModel> {
-      return this.httpClient.post<UserModel>(`${environment.baseUrl}api/users/authentication`, credentials)
+      return this.httpClient.post<UserModel>(`${environment.baseUrl}/api/users/authentication`, credentials)
         .do((user: UserModel) => this.storeLoggedInUser(user));
   }
 
