@@ -15,6 +15,9 @@ import { RegisterComponent } from './register/register.component';
 import { RaceService } from './race.service';
 import { UserService } from './user.service';
 import { JwtInterceptorService } from './jwt-interceptor.service';
+import { WsService } from './ws.service';
+import * as Webstomp from 'webstomp-client';
+import { WEBSOCKET, WEBSTOMP } from './app.tokens';
 
 import { FromNowPipe } from './from-now.pipe';
 
@@ -24,6 +27,13 @@ import { LoginComponent } from './login/login.component';
 import { BetComponent } from './bet/bet.component';
 import { LiveComponent } from './live/live.component';
 
+export function webSocketFactory() {
+  return WebSocket;
+}
+
+export function webstompFactory() {
+  return Webstomp;
+}
 
 @NgModule({
   declarations: [
@@ -49,8 +59,12 @@ import { LiveComponent } from './live/live.component';
   providers: [
       RaceService,
       UserService,
+      WsService,
       JwtInterceptorService,
-      { provide: HTTP_INTERCEPTORS, useExisting: JwtInterceptorService, multi: true }],
+      { provide: HTTP_INTERCEPTORS, useExisting: JwtInterceptorService, multi: true },
+      { provide: WEBSOCKET, useFactory: webSocketFactory },
+      { provide: WEBSTOMP, useFactory: webstompFactory }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
