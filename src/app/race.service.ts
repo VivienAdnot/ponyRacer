@@ -37,4 +37,8 @@ export class RaceService {
       .takeWhile((liveRace: RaceModel) => liveRace.status !== 'FINISHED')
       .map((liveRace) => liveRace.ponies);
   }
+
+  boost(raceId, ponyId) {
+      return this.httpClient.post(`${environment.baseUrl}/api/races/${raceId}/boosts`, { ponyId });
+  }
 }

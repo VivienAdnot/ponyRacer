@@ -33,8 +33,8 @@
             <span class="fa fa-flag" style="font-size: x-large;"></span>
           </div>
           <div style="width: 95%; border-right: 3px dotted lightgray;">
-            <div *ngFor="let pony of poniesWithPosition" class="pony-wrapper" [class.selected]="pony.id === raceModel.betPonyId" [style.marginLeft.%]="pony.position - 5">
-              <pr-pony [ponyModel]="pony" [isRunning]="true"></pr-pony>
+            <div *ngFor="let pony of poniesWithPosition trackBy ponyById" class="pony-wrapper" [class.selected]="pony.id === raceModel.betPonyId" [style.marginLeft.%]="pony.position - 5" style="transition: all linear 1s">
+              <pr-pony [ponyModel]="pony" [isRunning]="true" [isBoosted]="pony.boosted" (ponyClicked)="onClick(pony)"></pr-pony>
             </div>
           </div>
         </div>
