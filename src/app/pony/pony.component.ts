@@ -18,7 +18,8 @@ export class PonyComponent implements OnInit {
   }
 
   getPonyImageUrl() {
-      return `assets/images/pony-${this.ponyModel.color.toLowerCase()}${ this.isBoosted ? '-rainbow' : this.isRunning ? '-running' : ''}.gif`;
+      return `assets/images/pony-${this.ponyModel.color.toLowerCase()}`
+        + `${this.isBoosted ? '-rainbow' : this.isRunning ? '-running' : ''}.gif`;
   }
 
   clicked() {
