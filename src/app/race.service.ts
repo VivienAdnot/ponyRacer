@@ -21,4 +21,8 @@ export class RaceService {
   get(raceId) {
       return this.httpClient.get<RaceModel>(`${environment.baseUrl}/api/races/${raceId}`);
   }
+
+  cancelBet(raceId) {
+      return this.httpClient.delete(`${environment.baseUrl}/api/races/${raceId}/bets`);
+  }
 }
