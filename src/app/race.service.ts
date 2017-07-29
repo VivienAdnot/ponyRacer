@@ -34,6 +34,7 @@ export class RaceService {
 
   live(raceId): Observable<Array<PonyWithPositionModel>> {
       return this.wsService.connect(`/race/${raceId}`)
+      .takeWhile((liveRace: RaceModel) => liveRace.status !== 'FINISHED')
       .map((liveRace) => liveRace.ponies);
   }
 }
