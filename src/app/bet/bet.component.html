@@ -2,6 +2,8 @@
     <h2>{{raceModel.name}}</h2>
     <p>{{raceModel.startInstant | fromNow}}</p>
 
+    <a [routerLink]="['/races', raceModel.id, 'live']" class="btn btn-success">Watch live!</a>
+
     <div *ngIf="betFailed" class="alert alert-danger">
         <button type="button" class="close" aria-label="Close" (click)="betFailed = false;"><span aria-hidden="true">&#215;</span></button>
         The race is already started or finished

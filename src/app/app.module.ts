@@ -22,6 +22,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { LoginComponent } from './login/login.component';
 import { BetComponent } from './bet/bet.component';
+import { LiveComponent } from './live/live.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { BetComponent } from './bet/bet.component';
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    BetComponent
+    BetComponent,
+    LiveComponent
   ],
   imports: [
     BrowserModule,
