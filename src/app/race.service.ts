@@ -18,7 +18,7 @@ export class RaceService {
       return this.httpClient.post<RaceModel>(`${environment.baseUrl}/api/races/${raceId}/bets`, { ponyId });
   }
 
-  get(id) {
-      return this.httpClient.get<RaceModel>(`${environment.baseUrl}/api/races/${id}`);
+  get(raceId) {
+      return this.httpClient.get<RaceModel>(`${environment.baseUrl}/api/races/${raceId}`);
   }
 }
